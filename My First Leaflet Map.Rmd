@@ -1,0 +1,30 @@
+---
+title: "First Leaflet Map"
+author: "Mohamad Tayara"
+date: "March 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## My Leaflet Map
+Create a leaflet map object.
+```{r }
+library(leaflet)
+map <- leaflet() %>% addTiles()
+
+```
+
+
+Add the marker to the map and display the map.
+```{r}
+
+RaouchePopup <- c("<a href= 'https://www.facebook.com/lebanonraouche/' >  Raouche  </a>"  )
+leaflet() %>%
+   addTiles(urlTemplate = 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png') %>%
+   addMarkers(lat=33.8898, lng=35.4704, popup = RaouchePopup)
+
+```
